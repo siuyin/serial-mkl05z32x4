@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : KL05P48M48SF1RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-07-25, 09:44, # CodeGen: 13
+**     Date/Time   : 2020-07-25, 10:12, # CodeGen: 14
 **     Abstract    :
 **
 **     Settings    :
@@ -234,6 +234,7 @@
 /* {Default RTOS Adapter} No RTOS includes */
 #include "AS1.h"
 #include "SysTick.h"
+#include "Bit1.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"

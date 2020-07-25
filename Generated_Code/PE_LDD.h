@@ -6,7 +6,7 @@
 **     Version     : Component 01.000, Driver 01.04, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-07-25, 09:44, # CodeGen: 13
+**     Date/Time   : 2020-07-25, 10:12, # CodeGen: 14
 **     Abstract    :
 **
 **     Settings    :
@@ -63,6 +63,7 @@
 #include "PE_Const.h"
 #include "AS1.h"
 #include "SysTick.h"
+#include "Bit1.h"
 
 
 /*

@@ -31,6 +31,7 @@
 #include "Events.h"
 #include "AS1.h"
 #include "SysTick.h"
+#include "Bit1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -56,6 +57,17 @@ void SendHelloTask(void) {
 	}
 }
 
+LDD_TDeviceData* redLED;
+void BlinkLEDTask(void) {
+	static nrt;
+	if (tick != nrt) {
+		return;
+	}
+	nrt += 500;
+
+	Bit1_NegVal(redLED);
+}
+
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -69,8 +81,11 @@ int main(void)
 	/* Write your code here */
 
 	uart0 = AS1_Init(NULL);
+	redLED = Bit1_Init(NULL);
+
 	while (1) {
 		SendHelloTask();
+		BlinkLEDTask();
 	}
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/

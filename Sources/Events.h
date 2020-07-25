@@ -35,6 +35,7 @@
 #include "IO_Map.h"
 #include "AS1.h"
 #include "SysTick.h"
+#include "Bit1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -73,6 +74,8 @@ void Cpu_OnNMIINT(void);
 */
 /* ===================================================================*/
 void AS1_OnBlockSent(LDD_TUserData *UserDataPtr);
+
+volatile unsigned int tick;
 
 /* END Events */
 

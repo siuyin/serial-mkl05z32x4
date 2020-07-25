@@ -7,7 +7,7 @@
 **     Version     : Component 01.006, Driver 01.06, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-07-25, 09:44, # CodeGen: 13
+**     Date/Time   : 2020-07-25, 10:12, # CodeGen: 14
 **     Abstract    :
 **          This file implements the SysTick (SysTick) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -112,8 +112,6 @@ void SysTick_Init(void);
 ** ===================================================================
 */
 PE_ISR(sysTickISR);
-
-volatile unsigned int tick;
 
 
 /* END SysTick. */

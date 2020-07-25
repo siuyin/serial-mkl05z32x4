@@ -24,6 +24,7 @@
 \page page_components Components 
 - \subpage AS1
 - \subpage SysTick
+- \subpage Bit1
 
 */
 

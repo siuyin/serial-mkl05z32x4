@@ -19,6 +19,11 @@ Module "AS1"       (component Serial_LDD)
                 the status is returned and cleared (set to "false" state). This method is available only if a peripheral 
                 supports this feature.
 
+Module "SysTick"   (component Init_SysTick_VAR0)
+   - SysTick_Init -This method initializes registers of the SysTick module according to the Peripheral Initialization settings. 
+                Call this method in user code to initialize the module. By default, the method is called by PE automatically; 
+                see "Call Init method" property of the component for more details.
+
 Module "Cpu"       (component MKL05Z32LF4)
 
 ===================================================================================

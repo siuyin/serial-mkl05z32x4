@@ -201,5 +201,34 @@ PE_DEBUGHALT();
       <event name="OnTxComplete" v="don&amp;apos;t generate code" />
     </Events>
   </Bean>
+  <Bean name="SysTick" type="Init_SysTick">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SysTick" />
+      <Device v="SysTick" />
+      <group name="Settings">
+        <Clock_source v="Processor clock" />
+        <Reload_value v="20972" />
+        <Counter_period v="1.000 ms" />
+      </group>
+      <group name="Interrupts">
+        <Interrupt v="INT_SysTick" />
+        <Interrupt_priority v="0 (Highest)" />
+        <ISR_Name v="sysTickISR" />
+        <Timer_interrupt v="Enabled" />
+      </group>
+      <group name="Initialization">
+        <Timer_enable v="yes" />
+        <Clear_counter v="yes" />
+        <Call_Init_method v="yes" />
+      </group>
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
 

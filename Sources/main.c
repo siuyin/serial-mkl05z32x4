@@ -30,6 +30,7 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "AS1.h"
+#include "SysTick.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -40,6 +41,12 @@
 
 LDD_TDeviceData* uart0;
 void SendHelloTask(void) {
+	static unsigned int nrt;
+	if (tick!=nrt){
+		return;
+	}
+	nrt+=300;
+
 	static bool sentFirst;
 	if (!sentFirst) {
 		AS1_SendBlock(uart0, "Hello", 5);
@@ -72,15 +79,14 @@ int main(void)
 	}
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-#ifdef PEX_RTOS_START
-	PEX_RTOS_START(); /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-#endif
-	/*** End of RTOS startup code.  ***/
-	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-	for (;;) {
-	}
-	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */
